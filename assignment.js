@@ -1,5 +1,3 @@
-
-
 function feetToMile(feet) {
   const oneFeet = 0.000189394 //mile
   if (feet < 0) {
@@ -10,8 +8,16 @@ function feetToMile(feet) {
 }
 
 
-
 function woodCalculator(chair, table, khat) {
+  if(chair<0){
+    return 'Enter Positive Value For Chair'
+  }
+  if(table<0){
+    return 'Enter Positive Value For table'
+  }
+  if(khat<0){
+    return 'Enter Positive Value For khat'
+  }
   const oneChair = 1 //qfeet
   const oneTable = 3  //qfeet
   const oneKhat = 5 //qfeet
@@ -21,19 +27,21 @@ function woodCalculator(chair, table, khat) {
   var totalfeet = totalFeetForChair + totalFeetForTable + totalFeetForKhat;
   return totalfeet;
 }
+
+
 function brickCalculator(floor) {
 
   const oneFeet = 1000; //brick
 
   const firstTenFloor = 15 * 1000; //brick
-  const totalTenFloor = 10 * 15 * 1000;
+  const totalTenFloor = 10 * 15 * 1000;  //brick
 
   const elevenToTwintityFloor = 12 * 1000; //brick
-  const totalElevenToTwintityFloor = 12 * 1000 * 10;
+  const totalElevenToTwintyFloor = 12 * 1000 * 10;
 
-  const totalTwintyFloor = totalTenFloor + totalElevenToTwintityFloor;
+  const totalOneToTwintyFloor = totalTenFloor + totalElevenToTwintyFloor;
 
-  const trwintityToUpperFloor = 10 * 1000; //brick
+  const twintyToUpperFloor = 10 * 1000; //brick
 
   var totalBrick;
   if (floor < 0) {
@@ -46,21 +54,25 @@ function brickCalculator(floor) {
     return totalBrick = totalTenFloor + ta
   } else {
     var upToTwinty = floor - 20
-    var ta = trwintityToUpperFloor * upToTwinty;
-    return totalBrick = totalTwintyFloor + ta;
+    var totalTwintityToUperFloor = twintyToUpperFloor * upToTwinty;
+    return totalBrick = totalOneToTwintyFloor + totalTwintityToUperFloor;
   }
 }
 
 function tinyFriend(friend) {
-  var tinyfrn=friend[0];
-  var i = 0;
-  while (i < friend.length) {
-    var currentfrn=friend[i]
-      if(currentfrn.length < tinyfrn.length){
-          tinyfrn=currentfrn
-      }
-    i++
+  if(friend==''){
+   return "You don't have any friend";
+  }else{
+    var chiknaBondu=friend[0];
+    var i = 0;
+    while (i < friend.length) {
+      var currentfriend=friend[i]
+        if(currentfriend.length < chiknaBondu.length){
+          chiknaBondu=currentfriend
+        }
+      i++
+    }
+   return chiknaBondu;
   }
-  console.log(tinyfrn)
+
 }
-console.log(tinyFriend(['raarrrz','rafd','dafasdfs','ra']))
